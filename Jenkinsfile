@@ -8,7 +8,9 @@ pipeline {
   stages {
     stage('Stage One') {
       steps {
-        sh 'time'
+        sh 'date'
+        sh 'whoami'
+        sh 'pwd'
       }
     }
   }
