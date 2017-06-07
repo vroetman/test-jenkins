@@ -8,7 +8,9 @@ pipeline {
   stages {
     stage('Stage One') {
       steps {
-        sh '''ls
+        parallel(
+          "Stage One": {
+            sh '''ls
 pwd
 ASDF=onetwothree
 echo $ASDF
@@ -16,6 +18,14 @@ echo '$ASDF' "= $ASDF"
 id
 hostname
 cat /etc/redhat-release'''
+            
+          },
+          "": {
+            echo 'run in parallel???'
+            sh 'hostname'
+            
+          }
+        )
       }
     }
   }
