@@ -8,11 +8,14 @@ pipeline {
   stages {
     stage('Stage One') {
       steps {
-        sh 'date'
-        sh 'id'
-        sh 'pwd'
-        sh 'ASDF=asfadsf'
-        sh 'echo ASDF is $ASDF'
+        sh '''
+          ls
+          pwd
+          ASDF=onetwothree
+          echo $ASDF
+          echo \'$ASDF\' "= $ASDF"
+          id
+          hostname'''
       }
     }
   }
