@@ -9,8 +9,10 @@ pipeline {
     stage('Stage One') {
       steps {
         sh 'date'
-        sh 'whoami'
+        sh 'id'
         sh 'pwd'
+        sh 'ASDF=asfadsf'
+        sh 'echo ASDF is $ASDF'
       }
     }
   }
