@@ -15,7 +15,8 @@ pipeline {
           echo $ASDF
           echo \'$ASDF\' "= $ASDF"
           id
-          hostname'''
+          hostname
+	  cat /etc/redhat-release'''
       }
     }
   }
